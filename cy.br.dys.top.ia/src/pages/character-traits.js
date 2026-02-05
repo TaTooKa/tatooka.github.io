@@ -39,6 +39,254 @@ import voicemod_art from '/src/images/voicemod.jpg';
 import virtualcowboy_art from '/src/images/virtualcowboy.jpg';
 import dronerigger_art from '/src/images/dronerigger.jpg';
 
+export const traits = {
+    "skill": [
+        {
+            "name": "Blademaster",
+            "title": "BLADEMASTER",
+            "art": blademaster_art,
+            "description": 'when wielding a bladed weapon, gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.',
+            "affectedPrompts": ["Clash", "ActUnderPressure", "FulfillAChallenge"],
+        },
+        {
+            "name": "BountyHunter",
+            "title": "BOUNTY HUNTER",
+            "art": bountyhunter_art,
+            "description": 'gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of capturing a bounty, you gain double XP.',
+            "affectedPrompts": ["GatherInformation", "AcceptAChallenge", "FulfillAChallenge"],
+        },
+        {
+            "name": "Brawler",
+            "title": "BRAWLER",
+            "art": brawler_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess. You can also <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">CHROME</span> if you use an intimidating approach.',
+            "affectedPrompts": ["ActUnderPressure", "SecureAnAdvantage", "Clash", "GatherInformation"],
+        },
+        {
+            "name": "Diplomat",
+            "title": "DIPLOMAT",
+            "art": diplomat_art,
+            "description": 'gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a social encounter or a negotiation, you gain double XP.',
+            "affectedPrompts": ["FulfillAChallenge"],
+        },
+        {
+            "name": "Driver",
+            "title": "DRIVER",
+            "art": driver_art,
+            "description": 'gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle. Additionally, you can <a href="/prompts/general-prompts#clash">CLASH</a> with <span class="stat">EDGE</span> if you use your vehicle as a weapon. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a vehicular chase or escape, you gain double XP.',
+            "affectedPrompts": ["ActUnderPressure", "SecureAnAdvantage", "Clash", "FulfillAChallenge"],
+        },
+        {
+            "name": "DroneRigger",
+            "title": "DRONE RIGGER",
+            "art": dronerigger_art,
+            "description": 'Gain a <span class="boost">BOOST</span> for any action involving controlling remote drones or robotics. You can also <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a> to produce a Drone that protects you or your allies (the Drone <a href="/prompts/fate-prompts#pay-the-consequences">PAYS THE CONSEQUENCES</a> instead, a number of times equal to <b>X</b>) and helps you depending on its type: <ul> <li>UTILITY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a></li> <li>SPY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a></li> <li>COMBAT DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#clash">CLASH</a></li> </ul>',
+            "affectedPrompts": ["SecureAnAdvantage", "GatherInformation", "Clash", "SacrificeResources", "PayTheConsequences"],
+        },
+        {
+            "name": "Face",
+            "title": "FACE",
+            "art": face_art,
+            "description": 'gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">FLASH</span>.',
+            "affectedPrompts": ["SecureAnAdvantage", "AcceptAChallenge", "LeadTheTeam", "Compel"],
+        },
+        {
+            "name": "GunKata",
+            "title": "GUN KATA",
+            "art": gunkata_art,
+            "description": 'gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a firefight, you gain double XP.',
+            "affectedPrompts": ["Clash", "SecureAnAdvantage", "ActUnderPressure", "FulfillAChallenge"],
+        },
+        {
+            "name": "Infiltrator",
+            "title": "INFILTRATOR",
+            "art": infiltrator_art,
+            "description": 'gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of stealth or espionage, you gain double XP.',
+            "affectedPrompts": ["FulfillAChallenge"],
+        },
+        {
+            "name": "Medic",
+            "title": "MEDIC",
+            "art": medic_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.',
+            "affectedPrompts": ["Heal", "SacrificeResources"],
+        },
+        {
+            "name": "Netrunner",
+            "title": "NETRUNNER",
+            "art": netrunner_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to hacking a system, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by searching the NET. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of an involved netrun, you gain double XP.',
+            "affectedPrompts": ["AcceptAChallenge", "FulfillAChallenge", "GatherInformation"],
+        },
+        {
+            "name": "Sniper",
+            "title": "SNIPER",
+            "art": sniper_art,
+            "description": 'while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.',
+            "affectedPrompts": ["Clash", "SecureAnAdvantage"],
+        },
+        {
+            "name": "StreetRat",
+            "title": "STREET RAT",
+            "art": streetrat_art,
+            "description": 'gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating. When you are in the underbelly of the city, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">FLASH</span> or <span class="stat">SHADE</span>, and you gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to parkour through the environment, hide or mix with the people, or move through a secret shortcut.',
+            "affectedPrompts": ["GatherInformation", "ActUnderPressure"],
+        },
+        {
+            "name": "VirtualCowboy",
+            "title": "VIRTUAL COWBOY",
+            "art": virtualcowboy_art,
+            "description": 'You are a masterful program-slinger. You can use your <span class="stat">BRAIN</span> to <a href="/prompts/general-prompts#clash">CLASH</a> against VR constructs or avatars, or to <a href="/prompts/general-prompts#compel">COMPEL</a> against auth-bots or security guardians. Additionally, you can <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to spend an <i>exploit</i> and gain a <span class="boost">BOOST</span> to hacking-related tests or to reduce the severity when you must <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of a NET-related adversity.',
+            "affectedPrompts": ["Clash", "Compel", "SacrificeResources", "PayTheConsequences"],
+        },
+    ],
+    "gear": [
+        {
+            "name": "Armored",
+            "title": "ARMORED",
+            "art": armored_art,
+            "description": '<i>Shiny and Chrome</i>. Muscle+Bone lace and/or metallic alloy plating. Gain a <span class="boost">BOOST</span> for feats of strength when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a>, or when you <a href="/prompts/general-prompts#clash">CLASH</a> with physical attacks or impact damage.',
+            "affectedPrompts": ["ActUnderPressure", "SecureAnAdvantage", "Clash"],
+        },
+        {
+            "name": "Brainbox",
+            "title": "BRAINBOX",
+            "art": brainbox_art,
+            "description": '<i>A blackbox for your brain</i>. Ignore a <span class="fuchsia bold">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.',
+            "affectedPrompts": ["FaceDeath", "PayTheConsequences"],
+        },
+        {
+            "name": "CyberClaws",
+            "title": "CYBERCLAWS",
+            "art": cyberclaws_art,
+            "description": '<i>Retracting Mollies or Logans</i>. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of violence, when you <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">CHROME</span>.',
+            "affectedPrompts": ["AcceptAChallenge", "Clash", "Compel"],
+        },
+        {
+            "name": "Cyberdeck",
+            "title": "CYBERDECK",
+            "art": cyberdeck_art,
+            "description": '<i>Tool of the netrunner’s trade</i>. gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> while hacking or surfing the NET in <i>Shallow Mode</i> (non-VR).',
+            "affectedPrompts": ["SecureAnAdvantage", "GatherInformation"],
+        },
+        {
+            "name": "MirrorShades",
+            "title": "MIRRORSHADES",
+            "art": mirrorshades_art,
+            "description": '<i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">FLASH</span>.',
+            "affectedPrompts": [],
+        },
+        {
+            "name": "Neuralink",
+            "title": "NEURALINK",
+            "art": neuralink_art,
+            "description": '<i>Jacking in</i>... gain a <span class="boost">BOOST</span> for any hacking test while netrunning in <i>deep mode</i> (full sensory immersion), but since you are unaware of your meat-body and surroundings, gain a <span class="glitch" data-text="GLITCH">GLITCH</span> for any test <b>IRL</b>, and increase the severity to <i>major</i> if you have to <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a>.',
+            "affectedPrompts": ["PayTheConsequences"],
+        },
+        {
+            "name": "Plaskin",
+            "title": "PLASKIN",
+            "art": plaskin_art,
+            "description": '<i>Better than real skin™.</i> A patch of flexible carbon-fiber polymer mesh over muscle tissue, covered in artificial plastic skin (a self-healing material). Sensitive feedback can be tuned up or down at will. Installable in any part of the body you want. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to resist electric/cold/heat damage on that body part, or when you <a href="/prompts/recovery-prompts#heal">HEAL</a> from burns, cuts or scratches.',
+            "affectedPrompts": ["ActUnderPressure", "Heal"],
+        },
+        {
+            "name": "RetinalHUD",
+            "title": "RETINAL HUD",
+            "art": retinalhud_art,
+            "description": '<i>Target acquired</i>. Your cybereyes project an augmented display with target acquisition, IFF software (identify friend/foe), vulnerability analysis, personal data retrieval, etc. Gain a <span class="boost">BOOST</span> whenever that would give you an advantage in action-packed situations or investigation scenes.',
+            "affectedPrompts": [],
+        },
+        {
+            "name": "SimSenseRecorder",
+            "title": "SIMSENSE RECORDER",
+            "art": simsenserecorder_art,
+            "description": 'Live <i>Better Than Life™</i> experiences. SimSense allows to record/playback someone`s experience in full five senses. Filtered simchips translate physical sensations only; unfiltered (hacked) ones also replay emotions and thoughts. Apart from being able to replay simchips from others, you can record your own ones to replay later (which gives a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> related to that scene, or when you <a href="/prompts/recovery-prompts#relax">RELAX</a> by reliving a pleasant moment).',
+            "affectedPrompts": ["SecureAnAdvantage", "GatherInformation", "Relax"],
+        },
+        {
+            "name": "SmartCosmetics",
+            "title": "SMART COSMETICS",
+            "art": smartcosmetics_art,
+            "description": 'Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">FLASH</span>. Additionally, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">FLASH</span>.',
+            "affectedPrompts": ["Compel", "Resupply", "GatherInformation"],
+        },
+        {
+            "name": "SpecialAmmoMod",
+            "title": "SPECIAL AMMO MOD",
+            "art": specialammomod_art,
+            "description": 'Your firearm has a voice-activated mod that switches between <i>special ammo on demand</i>. Including but not limited to: Armor-piercing, Incendiary, Heat-seeker, Flashbang, Cyber-scrambler,  Rubber-ricochet. <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to gain <i>Narrative Permission</i> and a <span class="boost">BOOST</span> when you use one for a particular situation.',
+            "affectedPrompts": ["SacrificeResources"],
+        },
+        {
+            "name": "SubdermalShockers",
+            "title": "SUBDERMAL SHOCKERS",
+            "art": subdermalshockers_art,
+            "description": '<i>no touching!</i> gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to defend yourself while you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.',
+            "affectedPrompts": ["ActUnderPressure", "Clash"],
+        },
+        {
+            "name": "SynapseChip",
+            "title": "SYNAPSE CHIP",
+            "art": synapsechip_art,
+            "description": '<i>smarter on demand</i>. gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">BRAIN</span>.',
+            "affectedPrompts": [],
+        },
+        {
+            "name": "ThermopticCamo",
+            "title": "THERMOPTIC CAMO",
+            "art": thermopticcamo_art,
+            "description": '<i>now you see me</i>... Camouflage with nano cameras that record what`s behind and reproduce it in front. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.',
+            "affectedPrompts": [],
+        },
+        {
+            "name": "VoiceMod",
+            "title": "VOICE MOD",
+            "art": voicemod_art,
+            "description": '<i>Change your voice on demand</i>. This throat+larynx implant includes settings for Ventriloquism, Velvet Singer, Extra-Loud, Screamo Growl, Autotune, Voice-Copy, Instant-Translate, Polyphone, Sound FX, among others. Gain a <span class="boost">BOOST</span> whenever using those features could give you an advantage.',
+            "affectedPrompts": [],
+        },
+        {
+            "name": "WiredReflexes",
+            "title": "WIRED REFLEXES",
+            "art": wiredreflexes_art,
+            "description": '<i>Sandevistan!</i> Spine implant with neural boosters and adrenaline stimulators that makes you abnormaly fast. Gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.',
+            "affectedPrompts": ["ActUnderPressure", "SecureAnAdvantage", "Clash"],
+        },
+    ],
+    "contact": [
+        {
+            "name": "Dealer",
+            "title": "DEALER",
+            "art": dealer_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#relax">RELAX</a> by using addictive substances or simchips, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.',
+            "affectedPrompts": ["Relax", "SacrificeResources"],
+        },
+        {
+            "name": "Fixer",
+            "title": "FIXER",
+            "art": fixer_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> or when you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> for a contract or mission that they facilitated.',
+            "affectedPrompts": ["Resupply", "FulfillAChallenge"],
+        },
+        {
+            "name": "InfoBroker",
+            "title": "INFO BROKER",
+            "art": infobroker_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.',
+            "affectedPrompts": ["GatherInformation", "SacrificeResources"],
+        },
+        {
+            "name": "StreetDoc",
+            "title": "STREET DOC",
+            "art": streetdoc_art,
+            "description": 'gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#heal">HEAL</a>, or gain an automatic SUCCESS if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a>.',
+            "affectedPrompts": ["Heal", "SacrificeResources"],
+        }
+
+    ],
+};
+
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
 
@@ -176,67 +424,11 @@ function CharacterStats() {
         <div class="traits-container" id="skills-container">
             <h2 id="skills-and-background">SKILLS AND BACKGROUND</h2>
 
-            <Trait type="skill" name="Blademaster" title="BLADEMASTER" art={blademaster_art} inputs={inputs} handleChange={handleChange}>
-                <span>when wielding a bladed weapon, gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="BountyHunter" title="BOUNTY HUNTER" art={bountyhunter_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of capturing a bounty, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Brawler" title="BRAWLER" art={brawler_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess. You can also <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">CHROME</span> if you use an intimidating approach.</span>
-            </Trait>
-
-            <Trait type="skill" name="Diplomat" title="DIPLOMAT" art={diplomat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a social encounter or a negotiation, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Driver" title="DRIVER" art={driver_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle. Additionally, you can <a href="/prompts/general-prompts#clash">CLASH</a> with <span class="stat">EDGE</span> if you use your vehicle as a weapon. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a vehicular chase or escape, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="DroneRigger" title="DRONE RIGGER" art={dronerigger_art} inputs={inputs} handleChange={handleChange}>
-                <span>Gain a <span class="boost">BOOST</span> for any action involving controlling remote drones or robotics. You can also <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a> to produce a Drone that protects you or your allies (the Drone <a href="/prompts/fate-prompts#pay-the-consequences">PAYS THE CONSEQUENCES</a> instead, a number of times equal to <b>X</b>) and helps you depending on its type:
-                  <ul>
-                    <li>UTILITY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a></li>
-                    <li>SPY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a></li>
-                    <li>COMBAT DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#clash">CLASH</a></li>
-                  </ul>
-                </span>
-            </Trait>
-
-            <Trait type="skill" name="Face" title="FACE" art={face_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">FLASH</span>.</span>
-            </Trait>
-
-            <Trait type="skill" name="GunKata" title="GUN KATA" art={gunkata_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a firefight, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Infiltrator" title="INFILTRATOR" art={infiltrator_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of stealth or espionage, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Medic" title="MEDIC" art={medic_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.</span>
-            </Trait>
-
-            <Trait type="skill" name="Netrunner" title="NETRUNNER" art={netrunner_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to hacking a system, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by searching the NET. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of an involved netrun, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Sniper" title="SNIPER" art={sniper_art} inputs={inputs} handleChange={handleChange}>
-                <span>while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</span>
-            </Trait>
-
-            <Trait type="skill" name="StreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating. When you are in the underbelly of the city, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">FLASH</span> or <span class="stat">SHADE</span>, and you gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to parkour through the environment, hide or mix with the people, or move through a secret shortcut.</span>
-            </Trait>
-
-            <Trait type="skill" name="VirtualCowboy" title="VIRTUAL COWBOY" art={virtualcowboy_art} inputs={inputs} handleChange={handleChange}>
-                <span>You are a masterful program-slinger. You can use your <span class="stat">BRAIN</span> to <a href="/prompts/general-prompts#clash">CLASH</a> against VR constructs or avatars, or to <a href="/prompts/general-prompts#compel">COMPEL</a> against auth-bots or security guardians. Additionally, you can <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to spend an <i>exploit</i> and gain a <span class="boost">BOOST</span> to hacking-related tests or to reduce the severity when you must <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of a NET-related adversity.</span>
-            </Trait>
+            {Object.entries(traits.skill).map(([index, trait]) => (
+                <Trait type="skill" name={trait.name} title={trait.title} art={trait.art} inputs={inputs} handleChange={handleChange}>
+                    <span dangerouslySetInnerHTML={{ __html: trait.description }} />
+                </Trait>
+            ))}
 
         </div>
 
@@ -249,70 +441,11 @@ function CharacterStats() {
 
             <h2 id="gear-and-cyberware">GEAR AND CYBERWARE</h2>
 
-            <Trait type="gear" name="Armored" title="ARMORED" art={armored_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Shiny and Chrome</i>. Muscle+Bone lace and/or metallic alloy plating. Gain a <span class="boost">BOOST</span> for feats of strength when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a>, or when you <a href="/prompts/general-prompts#clash">CLASH</a> with physical attacks or impact damage.</span>
-            </Trait>
-
-            <Trait type="gear" name="Brainbox" title="BRAINBOX" art={brainbox_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>A blackbox for your brain</i>. Ignore a <span class="fuchsia bold">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</span>
-            </Trait>
-
-            <Trait type="gear" name="CyberClaws" title="CYBERCLAWS" art={cyberclaws_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Retracting Mollies or Logans</i>. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of violence, when you <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">CHROME</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Cyberdeck" title="CYBERDECK" art={cyberdeck_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Tool of the netrunner’s trade</i>. gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> while hacking or surfing the NET in <i>Shallow Mode</i> (non-VR).</span>
-            </Trait>
-
-            <Trait type="gear" name="MirrorShades" title="MIRRORSHADES" art={mirrorshades_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">FLASH</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Neuralink" title="NEURALINK" art={neuralink_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Jacking in</i>... gain a <span class="boost">BOOST</span> for any hacking test while netrunning in <i>deep mode</i> (full sensory immersion), but since you are unaware of your meat-body and surroundings, gain a <span class="glitch" data-text="GLITCH">GLITCH</span> for any test <b>IRL</b>, and increase the severity to <i>major</i> if you have to <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Plaskin" title="PLASKIN" art={plaskin_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Better than real skin™.</i> A patch of flexible carbon-fiber polymer mesh over muscle tissue, covered in artificial plastic skin (a self-healing material). Sensitive feedback can be tuned up or down at will. Installable in any part of the body you want. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to resist electric/cold/heat damage on that body part, or when you <a href="/prompts/recovery-prompts#heal">HEAL</a> from burns, cuts or scratches. </span>
-            </Trait>
-
-            <Trait type="gear" name="RetinalHud" title="RETINAL HUD" art={retinalhud_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Target acquired</i>. Your cybereyes project an augmented display with target acquisition, IFF software (identify friend/foe), vulnerability analysis, personal data retrieval, etc. Gain a <span class="boost">BOOST</span> whenever that would give you an advantage in action-packed situations or investigation scenes.</span>
-            </Trait>
-            
-            <Trait type="gear" name="SimsenseRecorder" title="SIMSENSE RECORDER" art={simsenserecorder_art} inputs={inputs} handleChange={handleChange}>
-                <span>Live <i>Better Than Life™</i> experiences. SimSense allows to record/playback someone's experience in full five senses. Filtered simchips translate physical sensations only; unfiltered (hacked) ones also replay emotions and thoughts. Apart from being able to replay simchips from others, you can record your own ones to replay later (which gives a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> related to that scene, or when you <a href="/prompts/recovery-prompts#relax">RELAX</a> by reliving a pleasant moment).
-</span>
-            </Trait>
-
-            <Trait type="gear" name="SmartCosmetics" title="SMART COSMETICS" art={smartcosmetics_art} inputs={inputs} handleChange={handleChange}>
-                <span>Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">FLASH</span>. Additionally, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">FLASH</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="SpecialAmmoMod" title="SPECIAL AMMO MOD" art={specialammomod_art} inputs={inputs} handleChange={handleChange}>
-                <span>Your firearm has a voice-activated mod that switches between <i>special ammo on demand</i>. Including but not limited to: Armor-piercing, Incendiary, Heat-seeker, Flashbang, Cyber-scrambler,  Rubber-ricochet. <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to gain <i>Narrative Permission</i> and a <span class="boost">BOOST</span> when you use one for a particular situation.</span>
-            </Trait>
-
-            <Trait type="gear" name="SubdermalShockers" title="SUBDERMAL SHOCKERS" art={subdermalshockers_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>no touching!</i> gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to defend yourself while you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
-            </Trait>
-
-            <Trait type="gear" name="SynapseChip" title="SYNAPSE CHIP" art={synapsechip_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>smarter on demand</i>. gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">BRAIN</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="ThermopticCamo" title="THERMOPTIC CAMO" art={thermopticcamo_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>now you see me</i>... Camouflage with nano cameras that record what's behind and reproduce it in front. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.</span>
-            </Trait>
-
-            <Trait type="gear" name="VoiceMod" title="VOICE MOD" art={voicemod_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Change your voice on demand</i>. This throat+larynx implant includes settings for Ventriloquism, Velvet Singer, Extra-Loud, Screamo Growl, Autotune, Voice-Copy, Instant-Translate, Polyphone, Sound FX, among others. Gain a <span class="boost">BOOST</span> whenever using those features could give you an advantage.</span>
-            </Trait>
-
-            <Trait type="gear" name="WiredReflexes" title="WIRED REFLEXES" art={wiredreflexes_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Sandevistan!</i> Spine implant with neural boosters and adrenaline stimulators that makes you abnormaly fast. Gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
-            </Trait>
+            {Object.entries(traits.gear).map(([index, trait]) => (
+                <Trait type="gear" name={trait.name} title={trait.title} art={trait.art} inputs={inputs} handleChange={handleChange}>
+                    <span dangerouslySetInnerHTML={{ __html: trait.description }} />
+                </Trait>
+            ))}
 
         </div>
 
@@ -324,37 +457,15 @@ function CharacterStats() {
         <div class="traits-container" id="contacts-container">
             <h2 id="contacts">CONTACTS</h2>
 
-            <Trait type="contact" name="Dealer" title="DEALER" art={dealer_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#relax">RELAX</a> by using addictive substances or simchips, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</span>
-                <div class="name-container">
-                    <label for="contactDealerName">NAME / ALIAS:</label>
-                    <input id="contactDealerName" type="text" name="contactDealerName" value={inputs.contactDealerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-
-            <Trait type="contact" name="Fixer" title="FIXER" art={fixer_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> or when you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> for a contract or mission that they facilitated.</span>
-                <div class="name-container">
-                    <label for="contactFixerName">NAME / ALIAS:</label>
-                    <input id="contactFixerName" type="text" name="contactFixerName" value={inputs.contactFixerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-            
-            <Trait type="contact" name="InfoBroker" title="INFOBROKER" art={infobroker_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</span>
-                <div class="name-container">
-                    <label for="contactInfoBrokerName">NAME / ALIAS:</label>
-                    <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-
-            <Trait type="contact" name="StreetDoc" title="STREET DOC" art={streetdoc_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#heal">HEAL</a>, or gain an automatic SUCCESS if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a>.</span>
-                <div class="name-container">
-                    <label for="contactStreetDocName">NAME / ALIAS:</label>
-                    <input id="contactStreetDocName" type="text" name="contactStreetDocName" value={inputs.contactStreetDocName} onChange={handleChange}/>
-                </div>
-            </Trait>
+            {Object.entries(traits.contact).map(([index, trait]) => (
+                <Trait type="contact" name={trait.name} title={trait.title} art={trait.art} inputs={inputs} handleChange={handleChange}>
+                    <span dangerouslySetInnerHTML={{ __html: trait.description }} />
+                    <div class="name-container">
+                        <label for={`contact${trait.name}Name`}>NAME / ALIAS:</label>
+                        <input id={`contact${trait.name}Name`} type="text" name={`contact${trait.name}Name`} value={inputs[`contact${trait.name}Name`]} onChange={handleChange}/>
+                    </div>
+                </Trait>
+            ))}
 
         </div>
 

@@ -1,4 +1,5 @@
 import Stat from "../../@rocketseat/gatsby-theme-docs/components/Stat.js"
+import AffectingTraits from "../../@rocketseat/gatsby-theme-docs/components/AffectingTraits.js"
 import CharacterState from '../../@rocketseat/gatsby-theme-docs/components/CharacterState.js'
 
 <CharacterState />
@@ -11,6 +12,7 @@ import CharacterState from '../../@rocketseat/gatsby-theme-docs/components/Chara
 
 Then, **if your GRIT is 0 or you choose to resist the harm**, test your <Stat name="CHROME"/>.
 
+<AffectingTraits promptName="EndureHarm"/>
 <hr class="gradient-hr-turquoise"/>
 
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You shake it off. Gain a <span class="boost">BOOST</span> for your next test. 
@@ -40,6 +42,7 @@ Then, **if your GRIT is still 0**, roll on the table below (if you are *IN A BAD
 
 Then, **if your PSYCHE is 0 or you choose to resist the stress**, test your <Stat name="FLASH"/>.
 
+<AffectingTraits promptName="EndureStress"/>
 <hr class="gradient-hr-turquoise"/>
 
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You shake it off. Gain a <span class="boost">BOOST</span> for your next test. 
@@ -65,6 +68,8 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 ## SACRIFICE RESOURCES
 ⋗ **When you lose or consume resources,** suffer <span class="fuchsia bold">-1 GEAR</span> for a minor loss, <span class="fuchsia bold">-2 GEAR</span> for a serious loss, or <span class="fuchsia bold">-3 GEAR</span> for a major loss.
 
+<AffectingTraits promptName="SacrificeResources"/>
+
 > You cannot **SACRIFICE RESOURCES** with your GEAR at 0.
 
 <hr/>
@@ -72,6 +77,8 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 
 ## FACE DEATH
 ⋗ **When you are brought to the brink of death**, test your <Stat name="CHROME"/>.
+
+<AffectingTraits promptName="FaceDeath"/>
 
 <hr class="gradient-hr-turquoise"/>
 
@@ -87,6 +94,8 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 
 ## FACE DESOLATION
 ⋗ **When you are brought to the brink of desolation**, test your <Stat name="FLASH"/>.
+
+<AffectingTraits promptName="FaceDesolation"/>
 
 <hr class="gradient-hr-turquoise"/>
 
