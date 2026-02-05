@@ -8,6 +8,7 @@ function CharacterStats() {
   const theme = useTheme();
   const windowGlobal = typeof window !== 'undefined' && window
   var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
+  var characterArcProgress = windowGlobal ? windowGlobal.localStorage.getItem("characterArcProgress") : "0";
 
   const [randHeartbeatPoints, setRandHeartbeatPoints] = useState(0);
 
@@ -22,7 +23,7 @@ function CharacterStats() {
       grit: "5",
       psyche: "5",
       gear: "5",
-      angleProgress: "1",
+      characterArc: "",
       brain: "1",
       chrome: "1",
       edge: "1",
@@ -39,6 +40,13 @@ function CharacterStats() {
     } else {
       const name = event.target.name;
       const value = event.target.value;
+      setInputs(values => ({...values, [name]: value}))
+    }
+    if ( event.target.name == "characterArc" ) {
+      const name = "characterArcDescription"
+      const value = event.target.alt;
+      var descriptionEl = document.getElementById('characterArcDescription');
+      descriptionEl.innerHTML = value;
       setInputs(values => ({...values, [name]: value}))
     }
   }
@@ -309,7 +317,7 @@ function CharacterStats() {
           <div class="angle-container">
             <div class="angle-header">
               <span class="angle-title">ANGLE</span>
-              <label class="angle-progress">PROGRESS <input type="number" name="angleProgress" value={inputs.angleProgress || ""} onChange={handleChange} min="1" max="99"/></label>
+              <label class="angle-progress">PROGRESS <span class="angle-progress-percentage">{characterArcProgress}%</span></label>
             </div>
             <div class="angle-options">
               <span>Choose One:</span>

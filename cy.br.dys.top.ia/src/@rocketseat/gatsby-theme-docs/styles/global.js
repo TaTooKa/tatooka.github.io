@@ -1111,10 +1111,12 @@ export default function GlobalStyle() {
                       display: flex;
                       font-size: 1em;
                       flex-grow: 1;
-                      input {
-                          margin: -3px 0 0 10px;
+                      .angle-progress-percentage {
+                          margin: 2px 0 0 10px;
                           height: 30px;
                           width: 45px;
+                          color: ${theme.colors.turquoise};
+                          text-shadow: 0 0 5px ${theme.colors.turquoise}, 0 0 20px black;
                       }
                     }
                 }
@@ -1764,6 +1766,11 @@ export default function GlobalStyle() {
             border: 1px solid #552240ff;
             box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
             background: #291220ff;
+          }
+
+          .challenge-container.characterArc {
+            border: 1px solid ${theme.colors.boost.mid};
+            box-shadow: inset 0 0 45px ${theme.colors.boost.dark}, 0 0 10px ${theme.colors.boost.mid};
           }
 
           #archived-challenges-container {
