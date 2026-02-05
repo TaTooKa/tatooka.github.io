@@ -159,10 +159,20 @@ export default function GlobalStyle() {
           font-size: 0.7em;
           font-weight: bold;
           color: #888;
+          opacity: 0.7;
           margin: 0 0 0 3px;
           vertical-align: middle;
           text-shadow: 0 0 10px #000;
           cursor: help;
+        }
+        .stat-value.bad {
+          color: #c36963ff;
+        }
+        .stat-value.normal {
+          color: #989057ff;
+        }
+        .stat-value.good {
+          color: #578498ff;
         }
 
         code.inline-code {
