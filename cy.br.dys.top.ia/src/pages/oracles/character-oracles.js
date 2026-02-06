@@ -156,7 +156,7 @@ export default function CharacterOracles() {
         <h3 id="look">LOOK</h3>
         <Oracle oracleName="character-look" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
 
-        <h3 id="look">ETHNICITY</h3>
+        <h3 id="ethnicity">ETHNICITY</h3>
         <Oracle oracleName="character-ethnicity" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="gender">GENDER</h3>
