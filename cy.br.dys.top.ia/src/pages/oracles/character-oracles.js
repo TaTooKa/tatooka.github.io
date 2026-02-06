@@ -109,8 +109,8 @@ export default function CharacterOracles() {
   function openAIGeneratedProstitutePortrait(e) {
     e.preventDefault();
     const gender = document.getElementById('oracle-character-gender-result').innerText;
-    const profession = "Prostitute";
-    const look = "sexy"
+    const profession = "Street Walker";
+    const look = "good-looking"
     const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-street-walker-result').innerText);
 
