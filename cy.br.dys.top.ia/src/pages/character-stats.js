@@ -78,7 +78,7 @@ function CharacterStats() {
     const fontFamilyAndroid = "'Android101', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const fontFamilyEuroStyle = "'EuroStyle', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const chartData = {
-        labels: ['CHROME '+inputs.chrome, 'EDGE '+inputs.edge, 'SHADE '+inputs.shade, 'FLASH '+inputs.flash, 'BRAIN '+inputs.brain],
+        labels: ['CHROME', 'EDGE', 'SHADE', 'FLASH', 'BRAIN'],
         datasets: [{
           data: [inputs.chrome, inputs.edge, inputs.shade, inputs.flash, inputs.brain],
           borderWidth: 1,
@@ -121,16 +121,14 @@ function CharacterStats() {
               grid: {
                 display: true,
                 color: setAlpha(theme.colors.turquoise, "11"),
-                circular: true,
+                circular: false,
                 lineWidth: 1,
                 font: {
                   family: fontFamilyEuroStyle,
                 },
               },
               suggestedMin: 0,
-              suggestedMax: 100,
-              min: 0,
-              max: 100,
+              suggestedMax: 50,
               animate: false,
           },
         },
